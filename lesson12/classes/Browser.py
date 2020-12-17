@@ -1,6 +1,6 @@
-from selenium import webdriver
 from selenium.webdriver import ChromeOptions, FirefoxOptions
 from webdrivermanager import ChromeDriverManager, GeckoDriverManager
+from selenium import webdriver
 
 
 class Browser:
@@ -22,9 +22,8 @@ class Browser:
     def __init__(self, browser, url):
         self.add_options(browser, url)
 
-    '''
-    Окрытие страницы
-    '''
+
+    # Окрытие страницы
     def add_options(self, browser, url):
         params = self.param[browser]
         drivers = params['driver']()
@@ -34,14 +33,11 @@ class Browser:
         self.web_browser = params['webdriver'](options=options)
         self.web_browser.get(url)
 
-    '''
-    Получение объекта webdriver
-    '''
+    # Получение объекта webdriver
     def get_wd(self):
         return self.web_browser
 
-    '''
-    Закрытие браузера
-    '''
+
+    # Закрытие браузера
     def closeBrowser(self):
         self.web_browser.quit()
