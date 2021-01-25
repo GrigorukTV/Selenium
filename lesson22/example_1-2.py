@@ -1,6 +1,5 @@
 import paramiko
 import urllib3
-
 import mysql.connector
 import sys
 import time

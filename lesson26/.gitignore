@@ -8,8 +8,9 @@
 /lesson4/4/.pytest_cache
 /lesson6/.pytest_cache
 /lesson12/.pytest_cache
-/lesson12/.idea
+/Selenium/lesson12/.idea
 .DS_Store
 __pycache__/
 classes/__pycache__/
 tests/__pycache__/
+/lesson22/.pytest_cache
