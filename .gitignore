@@ -1,0 +1,15 @@
+.idea/
+.pytest_cache
+/lesson1/.pytest_cache
+/lesson2/1/.pytest_cache
+/lesson4/1/.pytest_cache
+/lesson4/2/.pytest_cache
+/lesson4/3/.pytest_cache
+/lesson4/4/.pytest_cache
+/lesson6/.pytest_cache
+/lesson12/.pytest_cache
+/lesson12/.idea
+.DS_Store
+__pycache__/
+classes/__pycache__/
+tests/__pycache__/
