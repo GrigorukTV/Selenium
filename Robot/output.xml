@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.7.0 on darwin)" generated="20210214 17:14:07.097" rpa="false">
+<suite id="s1" name="Tests" source="/Volumes/WDCWD/Projects/OtusPythonQAJune2020/Selenium/Robot/Tests">
+<suite id="s1-s1" name="ApiDogBreed" source="/Volumes/WDCWD/Projects/OtusPythonQAJune2020/Selenium/Robot/Tests/ApiDogBreed.robot">
+<test id="s1-s1-t1" name="First Breed">
+<kw name="Passing Breed To Posts Handler">
+<arguments>
+<arg>afghan</arg>
+<arg>200</arg>
+</arguments>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>json_place</arg>
+<arg>url=${DOG}</arg>
+<arg>disable_warnings=1</arg>
+</arguments>
+<msg timestamp="20210214 17:14:07.432" level="INFO">Creating Session using : alias=json_place, url=https://dog.ceo, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210214 17:14:07.432" endtime="20210214 17:14:07.433"></status>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>json_place</arg>
+<arg>/api/breed/hound/${breed}/images</arg>
+<arg>expected_status=${status}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20210214 17:14:08.222" level="INFO">GET Request : url=https://dog.ceo/api/breed/hound/afghan/images 
+ path_url=/api/breed/hound/afghan/images 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210214 17:14:08.223" level="INFO">GET Response : url=https://dog.ceo/api/breed/hound/afghan/images 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 14 Feb 2021 15:14:08 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Set-Cookie': '__cfduid=d52b32196dd06c078df69ce54ad01e5b41613315648; expires=Tue, 16-Mar-21 15:14:08 GMT; path=/; domain=.dog.ceo; HttpOnly; SameSite=Lax; Secure', 'X-Powered-By': 'PHP/7.3.17', 'Access-Control-Allow-Origin': '*', 'Via': '1.1 varnish (Varnish/6.3), 1.1 varnish (Varnish/6.3)', 'Cache-Control': 'max-age=1800', 'X-Cache-Age': '20524', 'X-Cache-Hits': '13', 'X-Cache': 'HIT', 'Age': '0', 'Vary': '', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0842b442740000d447f393d000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=V9tuuTXlaH0AEzYhe6S63aVDpZvdALYni4yPjntWJ1MIe%2FU%2FQwv41gkHOcrkAsYwowYhOq3R3j3LQt%2F7bXC%2F4mhtysxV8Sbt"}],"max_age":604800,"group":"cf-nel"}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '6217bcb0b90ed447-HAM', 'Content-Encoding': 'gzip'} 
+ body={"message":["https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1003.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1007.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1023.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_10263.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_10715.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_10822.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_10832.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_10982.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_11006.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_11172.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_11182.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1126.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1128.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_11432.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1145.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_115.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1150.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_11570.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_11584.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1167.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1186.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_11953.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1222.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1234.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_12364.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1254.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_12563.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1259.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_12664.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1270.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_12867.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_12879.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_12945.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1301.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_13011.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_13145.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_13270.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1335.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_13442.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_13502.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1357.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1370.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_13742.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_13879.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_13907.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_13909.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1406.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1410.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1430.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1459.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1475.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1479.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1534.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1592.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1611.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1618.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1661.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1724.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_173.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1823.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1829.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1841.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_185.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1882.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1907.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1917.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1924.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1932.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2062.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2131.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2173.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_227.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2292.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_231.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2458.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_251.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2522.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2545.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2559.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_26.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2626.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2641.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_266.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2700.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_272.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2726.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2732.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2738.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2798.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2803.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2822.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2879.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_294.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_305.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3051.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3057.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3059.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3075.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3080.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3119.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3159.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3201.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3233.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3252.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3374.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3396.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3400.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_342.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3500.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3531.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3564.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_357.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3582.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3588.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3593.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3596.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3613.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3620.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3629.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3630.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3641.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3653.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3749.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3793.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3836.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3850.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3856.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3858.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_392.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3920.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3937.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3944.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3949.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3982.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3989.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_4027.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_4037.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_4049.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_4072.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_4114.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_4143.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_4195.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_4219.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_4230.jpg","https:\/\/images.dog.ceo\/breeds\/hound... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20210214 17:14:08.224" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210214 17:14:07.436" endtime="20210214 17:14:08.224"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${status}</arg>
+<arg>${resp.status_code}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:08.227" level="INFO">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;class 'int'&gt;</msg>
+<status status="PASS" starttime="20210214 17:14:08.227" endtime="20210214 17:14:08.228"></status>
+</kw>
+<status status="PASS" starttime="20210214 17:14:07.431" endtime="20210214 17:14:08.229"></status>
+</kw>
+<status status="PASS" starttime="20210214 17:14:07.430" endtime="20210214 17:14:08.229" critical="yes"></status>
+</test>
+<test id="s1-s1-t2" name="Second Breed">
+<kw name="Passing Breed To Posts Handler">
+<arguments>
+<arg>basset</arg>
+<arg>200</arg>
+</arguments>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>json_place</arg>
+<arg>url=${DOG}</arg>
+<arg>disable_warnings=1</arg>
+</arguments>
+<msg timestamp="20210214 17:14:08.236" level="INFO">Creating Session using : alias=json_place, url=https://dog.ceo, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210214 17:14:08.235" endtime="20210214 17:14:08.237"></status>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>json_place</arg>
+<arg>/api/breed/hound/${breed}/images</arg>
+<arg>expected_status=${status}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20210214 17:14:08.738" level="INFO">GET Request : url=https://dog.ceo/api/breed/hound/basset/images 
+ path_url=/api/breed/hound/basset/images 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210214 17:14:08.739" level="INFO">GET Response : url=https://dog.ceo/api/breed/hound/basset/images 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 14 Feb 2021 15:14:08 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Set-Cookie': '__cfduid=d6d34ebc6f6feaaad644242c87cec0b271613315648; expires=Tue, 16-Mar-21 15:14:08 GMT; path=/; domain=.dog.ceo; HttpOnly; SameSite=Lax; Secure', 'X-Powered-By': 'PHP/7.3.17', 'Access-Control-Allow-Origin': '*', 'Via': '1.1 varnish (Varnish/6.3), 1.1 varnish (Varnish/6.3)', 'Cache-Control': 'max-age=1800', 'X-Cache-Age': '6523', 'X-Cache-Hits': '6', 'X-Cache': 'HIT', 'Age': '0', 'Vary': '', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0842b4448100004150e4970000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"max_age":604800,"group":"cf-nel","endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=9NdDh%2FyiTH7vay9jxAqlZp8O59TZMZDSj3HWxXJaHnSD19pxjtyLrjpSRnSNwH%2BkvZf1GaCeuPK4Gxqlpw%2FXKx4u9dGxH7Ln"}]}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '6217bcb3fe264150-HAM', 'Content-Encoding': 'gzip'} 
+ body={"message":["https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10005.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10013.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10028.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10049.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10051.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10054.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10063.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10072.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10095.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10102.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10106.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10110.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10113.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10129.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10140.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10142.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10183.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10245.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10288.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10338.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10358.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10451.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10473.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10510.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10592.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10682.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10741.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10753.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10757.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10870.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_10932.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11113.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11124.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11136.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11148.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11200.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11204.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11223.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11281.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11318.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11339.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11383.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11393.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11505.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11511.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11522.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11542.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11635.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11846.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11849.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_11917.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_12160.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_12196.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_12293.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_12427.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_12469.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_12555.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_12563.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_1261.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_12710.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_12966.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_12974.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_12997.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_13036.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_13079.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_13199.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_13222.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_13373.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_13439.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_13608.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_13683.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_13709.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_13720.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_13799.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_13847.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_13908.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_1454.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_1731.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_1944.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_2009.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_2217.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_2574.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_2646.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_2674.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_2686.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_2822.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_2879.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_305.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_3066.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_3079.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_3359.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_3475.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_3579.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_363.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_3778.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_4182.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_4365.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_4374.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_490.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_517.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_5239.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_5441.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_600.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_6012.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_6017.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_6035.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_6161.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_6532.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_657.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_658.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_6621.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_664.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_665.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_6707.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_6708.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_6812.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_6988.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_7131.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_7181.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_7232.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_7233.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_7487.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_7553.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_7718.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_7741.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_7855.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_8140.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_8480.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_8520.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_8839.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_9015.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_9025.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_9154.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_9162.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_9257.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_9267.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_9292.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_9324.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_9332.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_9351.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_9360.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_9372.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_9419.jpg","https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20210214 17:14:08.740" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210214 17:14:08.238" endtime="20210214 17:14:08.740"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${status}</arg>
+<arg>${resp.status_code}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:08.744" level="INFO">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;class 'int'&gt;</msg>
+<status status="PASS" starttime="20210214 17:14:08.743" endtime="20210214 17:14:08.744"></status>
+</kw>
+<status status="PASS" starttime="20210214 17:14:08.235" endtime="20210214 17:14:08.747"></status>
+</kw>
+<status status="PASS" starttime="20210214 17:14:08.234" endtime="20210214 17:14:08.748" critical="yes"></status>
+</test>
+<doc>List all sub-breed images</doc>
+<status status="PASS" starttime="20210214 17:14:07.265" endtime="20210214 17:14:08.753"></status>
+</suite>
+<suite id="s1-s2" name="ApiDogImages" source="/Volumes/WDCWD/Projects/OtusPythonQAJune2020/Selenium/Robot/Tests/ApiDogImages.robot">
+<test id="s1-s2-t1" name="Two Images">
+<kw name="Passing Count To Posts Handler">
+<arguments>
+<arg>2</arg>
+<arg>200</arg>
+</arguments>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>json_place</arg>
+<arg>url=${DOG}</arg>
+<arg>disable_warnings=1</arg>
+</arguments>
+<msg timestamp="20210214 17:14:08.767" level="INFO">Creating Session using : alias=json_place, url=https://dog.ceo, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210214 17:14:08.766" endtime="20210214 17:14:08.768"></status>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>json_place</arg>
+<arg>/api/breed/hound/afghan/images/random/${count}</arg>
+<arg>expected_status=${status}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20210214 17:14:09.181" level="INFO">GET Request : url=https://dog.ceo/api/breed/hound/afghan/images/random/2 
+ path_url=/api/breed/hound/afghan/images/random/2 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210214 17:14:09.181" level="INFO">GET Response : url=https://dog.ceo/api/breed/hound/afghan/images/random/2 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 14 Feb 2021 15:14:09 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Set-Cookie': '__cfduid=df7ab448c0649a0cfec8466952d90c4cc1613315649; expires=Tue, 16-Mar-21 15:14:09 GMT; path=/; domain=.dog.ceo; HttpOnly; SameSite=Lax; Secure', 'X-Powered-By': 'PHP/7.3.17', 'Cache-Control': 'no-cache, private', 'Access-Control-Allow-Origin': '*', 'Via': '1.1 varnish (Varnish/6.3), 1.1 varnish (Varnish/6.3)', 'X-Cache-Hits': '0', 'X-Cache': 'MISS', 'Age': '0', 'Vary': '', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0842b445f900005ab26e0ae000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=AwKICaBhy%2BZHLlLmQMolqUtsKp31BcBxLwXgGUE%2FQgXWPMQWexS3wdKE5d0I7KqxugiAUV%2BUHHyGkifqRtPjXPKYL6YDlv19"}]}', 'NEL': '{"max_age":604800,"report_to":"cf-nel"}', 'Server': 'cloudflare', 'CF-RAY': '6217bcb658c55ab2-DME', 'Content-Encoding': 'gzip'} 
+ body={"message":["https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_5244.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_9220.jpg"],"status":"success"} 
+ </msg>
+<msg timestamp="20210214 17:14:09.182" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210214 17:14:08.769" endtime="20210214 17:14:09.182"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${resp.json()['message']}</arg>
+</arguments>
+<assign>
+<var>${size}</var>
+</assign>
+<msg timestamp="20210214 17:14:09.185" level="INFO">Length is 2</msg>
+<msg timestamp="20210214 17:14:09.185" level="INFO">${size} = 2</msg>
+<status status="PASS" starttime="20210214 17:14:09.184" endtime="20210214 17:14:09.185"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${size}</arg>
+<arg>${count}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:09.187" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210214 17:14:09.186" endtime="20210214 17:14:09.187"></status>
+</kw>
+<status status="PASS" starttime="20210214 17:14:08.765" endtime="20210214 17:14:09.188"></status>
+</kw>
+<status status="PASS" starttime="20210214 17:14:08.764" endtime="20210214 17:14:09.189" critical="yes"></status>
+</test>
+<test id="s1-s2-t2" name="Three Images">
+<kw name="Passing Count To Posts Handler">
+<arguments>
+<arg>3</arg>
+<arg>200</arg>
+</arguments>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>json_place</arg>
+<arg>url=${DOG}</arg>
+<arg>disable_warnings=1</arg>
+</arguments>
+<msg timestamp="20210214 17:14:09.199" level="INFO">Creating Session using : alias=json_place, url=https://dog.ceo, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210214 17:14:09.198" endtime="20210214 17:14:09.200"></status>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>json_place</arg>
+<arg>/api/breed/hound/afghan/images/random/${count}</arg>
+<arg>expected_status=${status}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20210214 17:14:09.613" level="INFO">GET Request : url=https://dog.ceo/api/breed/hound/afghan/images/random/3 
+ path_url=/api/breed/hound/afghan/images/random/3 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210214 17:14:09.613" level="INFO">GET Response : url=https://dog.ceo/api/breed/hound/afghan/images/random/3 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 14 Feb 2021 15:14:09 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Set-Cookie': '__cfduid=def91fb775eff6e4ab23f478c16acf9901613315649; expires=Tue, 16-Mar-21 15:14:09 GMT; path=/; domain=.dog.ceo; HttpOnly; SameSite=Lax; Secure', 'X-Powered-By': 'PHP/7.3.17', 'Cache-Control': 'no-cache, private', 'Access-Control-Allow-Origin': '*', 'Via': '1.1 varnish (Varnish/6.3), 1.1 varnish (Varnish/6.3)', 'X-Cache-Hits': '0', 'X-Cache': 'MISS', 'Age': '0', 'Vary': '', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0842b447a60000901594a6c000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"group":"cf-nel","endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=gfhdP%2Fuc03%2FB5P09y8RfOnYbJ7tV%2B4x%2FBxNS3OKETPtv7FJRQaQ%2Bw3e8gB0zr5iKkWRC2YvHYgfAAUc4Vbe57y%2BlFVuuWCeo"}],"max_age":604800}', 'NEL': '{"max_age":604800,"report_to":"cf-nel"}', 'Server': 'cloudflare', 'CF-RAY': '6217bcb908839015-DME', 'Content-Encoding': 'gzip'} 
+ body={"message":["https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1410.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_4678.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_5855.jpg"],"status":"success"} 
+ </msg>
+<msg timestamp="20210214 17:14:09.614" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210214 17:14:09.201" endtime="20210214 17:14:09.614"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${resp.json()['message']}</arg>
+</arguments>
+<assign>
+<var>${size}</var>
+</assign>
+<msg timestamp="20210214 17:14:09.618" level="INFO">Length is 3</msg>
+<msg timestamp="20210214 17:14:09.618" level="INFO">${size} = 3</msg>
+<status status="PASS" starttime="20210214 17:14:09.616" endtime="20210214 17:14:09.618"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${size}</arg>
+<arg>${count}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:09.621" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210214 17:14:09.620" endtime="20210214 17:14:09.621"></status>
+</kw>
+<status status="PASS" starttime="20210214 17:14:09.197" endtime="20210214 17:14:09.622"></status>
+</kw>
+<status status="PASS" starttime="20210214 17:14:09.194" endtime="20210214 17:14:09.623" critical="yes"></status>
+</test>
+<doc>Display several random images from an entire dog collection</doc>
+<status status="PASS" starttime="20210214 17:14:08.760" endtime="20210214 17:14:09.628"></status>
+</suite>
+<suite id="s1-s3" name="ApiTesting" source="/Volumes/WDCWD/Projects/OtusPythonQAJune2020/Selenium/Robot/Tests/ApiTesting.robot">
+<test id="s1-s3-t1" name="Test Dog Status Code">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>json_place</arg>
+<arg>${DOG}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:09.892" level="INFO">Creating Session using : alias=json_place, url=https://dog.ceo, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210214 17:14:09.891" endtime="20210214 17:14:09.892"></status>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>json_place</arg>
+<arg>/api/breed/hound/afghan/images</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20210214 17:14:10.347" level="INFO">GET Request : url=https://dog.ceo/api/breed/hound/afghan/images 
+ path_url=/api/breed/hound/afghan/images 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210214 17:14:10.349" level="INFO">GET Response : url=https://dog.ceo/api/breed/hound/afghan/images 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 14 Feb 2021 15:14:10 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Set-Cookie': '__cfduid=d8c499ee0b0b9a0fc967c48e9ed69376c1613315650; expires=Tue, 16-Mar-21 15:14:10 GMT; path=/; domain=.dog.ceo; HttpOnly; SameSite=Lax; Secure', 'X-Powered-By': 'PHP/7.3.17', 'Access-Control-Allow-Origin': '*', 'Via': '1.1 varnish (Varnish/6.3), 1.1 varnish (Varnish/6.3)', 'Cache-Control': 'max-age=1800', 'X-Cache-Age': '20526', 'X-Cache-Hits': '14', 'X-Cache': 'HIT', 'Age': '0', 'Vary': '', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0842b44a6300003a77e630a000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"max_age":604800,"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=egTxsyeLmlQEPg6hwc5ZOOLQrmQLqsvq3sH25uuKe9YLRyui%2F9qmmWQyNJIqGCtd6k06xL1CBBAdCdY8ru2IBnbL8DRmbaYp"}],"group":"cf-nel"}', 'NEL': '{"max_age":604800,"report_to":"cf-nel"}', 'Server': 'cloudflare', 'CF-RAY': '6217bcbd6d7a3a77-DME', 'Content-Encoding': 'gzip'} 
+ body={"message":["https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1003.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1007.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1023.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_10263.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_10715.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_10822.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_10832.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_10982.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_11006.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_11172.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_11182.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1126.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1128.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_11432.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1145.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_115.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1150.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_11570.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_11584.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1167.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1186.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_11953.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1222.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1234.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_12364.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1254.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_12563.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1259.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_12664.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1270.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_12867.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_12879.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_12945.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1301.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_13011.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_13145.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_13270.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1335.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_13442.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_13502.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1357.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1370.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_13742.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_13879.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_13907.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_13909.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1406.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1410.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1430.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1459.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1475.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1479.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1534.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1592.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1611.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1618.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1661.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1724.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_173.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1823.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1829.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1841.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_185.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1882.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1907.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1917.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1924.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_1932.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2062.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2131.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2173.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_227.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2292.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_231.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2458.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_251.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2522.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2545.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2559.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_26.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2626.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2641.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_266.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2700.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_272.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2726.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2732.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2738.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2798.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2803.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2822.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_2879.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_294.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_305.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3051.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3057.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3059.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3075.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3080.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3119.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3159.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3201.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3233.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3252.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3374.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3396.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3400.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_342.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3500.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3531.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3564.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_357.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3582.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3588.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3593.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3596.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3613.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3620.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3629.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3630.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3641.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3653.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3749.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3793.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3836.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3850.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3856.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3858.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_392.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3920.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3937.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3944.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3949.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3982.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_3989.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_4027.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_4037.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_4049.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_4072.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_4114.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_4143.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_4195.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_4219.jpg","https:\/\/images.dog.ceo\/breeds\/hound-afghan\/n02088094_4230.jpg","https:\/\/images.dog.ceo\/breeds\/hound... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20210214 17:14:10.350" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210214 17:14:09.893" endtime="20210214 17:14:10.350"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>200</arg>
+<arg>${resp.status_code}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:10.354" level="INFO">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;class 'int'&gt;</msg>
+<status status="PASS" starttime="20210214 17:14:10.352" endtime="20210214 17:14:10.354"></status>
+</kw>
+<doc>Checking the request status of the page with a picture</doc>
+<status status="PASS" starttime="20210214 17:14:09.890" endtime="20210214 17:14:10.356" critical="yes"></status>
+</test>
+<test id="s1-s3-t2" name="Test Dog Messege">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>json_place</arg>
+<arg>${DOG}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:10.363" level="INFO">Creating Session using : alias=json_place, url=https://dog.ceo, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210214 17:14:10.362" endtime="20210214 17:14:10.364"></status>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>json_place</arg>
+<arg>/api/breed/hound/list</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20210214 17:14:10.792" level="INFO">GET Request : url=https://dog.ceo/api/breed/hound/list 
+ path_url=/api/breed/hound/list 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210214 17:14:10.792" level="INFO">GET Response : url=https://dog.ceo/api/breed/hound/list 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 14 Feb 2021 15:14:10 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Set-Cookie': '__cfduid=d8d58d0d7e075af502e422b5cdab93d211613315650; expires=Tue, 16-Mar-21 15:14:10 GMT; path=/; domain=.dog.ceo; HttpOnly; SameSite=Lax; Secure', 'X-Powered-By': 'PHP/7.3.17', 'Access-Control-Allow-Origin': '*', 'Via': '1.1 varnish (Varnish/6.3), 1.1 varnish (Varnish/6.3)', 'Cache-Control': 'max-age=1800', 'X-Cache-Age': '11372', 'X-Cache-Hits': '5', 'X-Cache': 'HIT', 'Age': '0', 'Vary': '', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0842b44c5400007c17deacc000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=dQwppYdmsEXcFZJ5CMCLMKeEL7n78Ay1Ie%2Bw3Pr7K4go%2BWMRoc8kWH9zqucl8k7qpwD%2Ffu5clZrB3FZ1MAjpZ6%2BgM6ycM9dU"}]}', 'NEL': '{"max_age":604800,"report_to":"cf-nel"}', 'Server': 'cloudflare', 'CF-RAY': '6217bcc08bf77c17-DME', 'Content-Encoding': 'gzip'} 
+ body={"message":["afghan","basset","blood","english","ibizan","plott","walker"],"status":"success"} 
+ </msg>
+<msg timestamp="20210214 17:14:10.793" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210214 17:14:10.365" endtime="20210214 17:14:10.793"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${message}</arg>
+<arg>${resp.json()['message'][2]}</arg>
+</arguments>
+<status status="PASS" starttime="20210214 17:14:10.795" endtime="20210214 17:14:10.796"></status>
+</kw>
+<doc>Checking for the existence of a value</doc>
+<status status="PASS" starttime="20210214 17:14:10.361" endtime="20210214 17:14:10.797" critical="yes"></status>
+</test>
+<test id="s1-s3-t3" name="Test Dog Status Response">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>json_place</arg>
+<arg>${DOG}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:10.803" level="INFO">Creating Session using : alias=json_place, url=https://dog.ceo, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210214 17:14:10.803" endtime="20210214 17:14:10.804"></status>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>json_place</arg>
+<arg>/api/breeds/image/random</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20210214 17:14:11.208" level="INFO">GET Request : url=https://dog.ceo/api/breeds/image/random 
+ path_url=/api/breeds/image/random 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210214 17:14:11.208" level="INFO">GET Response : url=https://dog.ceo/api/breeds/image/random 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 14 Feb 2021 15:14:11 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Set-Cookie': '__cfduid=d908402831c0f8f6241bd614dd26fe5331613315651; expires=Tue, 16-Mar-21 15:14:11 GMT; path=/; domain=.dog.ceo; HttpOnly; SameSite=Lax; Secure', 'X-Powered-By': 'PHP/7.3.17', 'Cache-Control': 'no-cache, private', 'Access-Control-Allow-Origin': '*', 'Via': '1.1 varnish (Varnish/6.3), 1.1 varnish (Varnish/6.3)', 'X-Cache-Hits': '0', 'X-Cache': 'MISS', 'Age': '0', 'Vary': '', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0842b44e1800007b3f1a812000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"max_age":604800,"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=SfRDkm8Nsu7r1mdRC2ul10wyEkAFmg1AGpWxu1jP5ucTxf8mpUyW%2FDQdTWL%2FKgbfGPG0Hmg0Zxrpj1qZ1EzFDoVRcZ20csBG"}],"group":"cf-nel"}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '6217bcc35d8a7b3f-DME', 'Content-Encoding': 'gzip'} 
+ body={"message":"https:\/\/images.dog.ceo\/breeds\/appenzeller\/n02107908_7690.jpg","status":"success"} 
+ </msg>
+<msg timestamp="20210214 17:14:11.209" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210214 17:14:10.805" endtime="20210214 17:14:11.209"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${respons}</arg>
+<arg>${resp.json()['status']}</arg>
+</arguments>
+<status status="PASS" starttime="20210214 17:14:11.211" endtime="20210214 17:14:11.212"></status>
+</kw>
+<doc>Checking the status in the response</doc>
+<status status="PASS" starttime="20210214 17:14:10.802" endtime="20210214 17:14:11.213" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210214 17:14:09.636" endtime="20210214 17:14:11.220"></status>
+</suite>
+<suite id="s1-s4" name="DatabaseTesting" source="/Volumes/WDCWD/Projects/OtusPythonQAJune2020/Selenium/Robot/Tests/DatabaseTesting.robot">
+<kw name="Connect To Database" library="DatabaseLibrary" type="setup">
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<arguments>
+<arg>pymysql</arg>
+<arg>${DBName}</arg>
+<arg>${DBUser}</arg>
+<arg>${DBPass}</arg>
+<arg>${DBHost}</arg>
+<arg>${DBPort}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:11.606" level="INFO">Connecting using : pymysql.connect(db=bitnami_opencart, user=bn_opencart, passwd=, host=0.0.0.0, port=3307, charset=None) </msg>
+<status status="PASS" starttime="20210214 17:14:11.541" endtime="20210214 17:14:11.616"></status>
+</kw>
+<test id="s1-s4-t1" name="Add account using Db validation">
+<kw name="Open Browser" library="SeleniumLibrary" type="setup">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:11.620" level="INFO">Opening browser 'chrome' to base url 'http://localhost'.</msg>
+<status status="PASS" starttime="20210214 17:14:11.619" endtime="20210214 17:14:17.676"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}/index.php?route=account/register</arg>
+</arguments>
+<msg timestamp="20210214 17:14:17.682" level="INFO">Opening url 'http://localhost/index.php?route=account/register'</msg>
+<status status="PASS" starttime="20210214 17:14:17.680" endtime="20210214 17:14:18.243"></status>
+</kw>
+<kw name="Register Customer" library="RegisterPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${First_Name}</arg>
+<arg>Вася</arg>
+</arguments>
+<msg timestamp="20210214 17:14:18.253" level="INFO">Typing text 'Вася' into text field 'css=#input-firstname'.</msg>
+<status status="PASS" starttime="20210214 17:14:18.247" endtime="20210214 17:14:18.489"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Last_Name}</arg>
+<arg>Пупкин</arg>
+</arguments>
+<msg timestamp="20210214 17:14:18.491" level="INFO">Typing text 'Пупкин' into text field 'css=#input-lastname'.</msg>
+<status status="PASS" starttime="20210214 17:14:18.490" endtime="20210214 17:14:18.677"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${E-Mail}</arg>
+<arg>test@mail.ru</arg>
+</arguments>
+<msg timestamp="20210214 17:14:18.679" level="INFO">Typing text 'test@mail.ru' into text field 'css=#input-email'.</msg>
+<status status="PASS" starttime="20210214 17:14:18.678" endtime="20210214 17:14:18.855"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Telephone}</arg>
+<arg>+79100000000</arg>
+</arguments>
+<msg timestamp="20210214 17:14:18.858" level="INFO">Typing text '+79100000000' into text field 'css=#input-telephone'.</msg>
+<status status="PASS" starttime="20210214 17:14:18.857" endtime="20210214 17:14:19.026"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Pass}</arg>
+<arg>12345678</arg>
+</arguments>
+<msg timestamp="20210214 17:14:19.029" level="INFO">Typing text '12345678' into text field 'css=#input-password'.</msg>
+<status status="PASS" starttime="20210214 17:14:19.028" endtime="20210214 17:14:19.221"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Pass_confirm}</arg>
+<arg>12345678</arg>
+</arguments>
+<msg timestamp="20210214 17:14:19.224" level="INFO">Typing text '12345678' into text field 'css=#input-confirm'.</msg>
+<status status="PASS" starttime="20210214 17:14:19.223" endtime="20210214 17:14:19.428"></status>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<arguments>
+<arg>${Checkbox}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:19.432" level="INFO">Selecting checkbox 'css=.pull-right input[name="agree"]'.</msg>
+<status status="PASS" starttime="20210214 17:14:19.430" endtime="20210214 17:14:19.572"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${Button}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:19.575" level="INFO">Clicking button 'css=.pull-right input[value="Continue"]'.</msg>
+<status status="PASS" starttime="20210214 17:14:19.574" endtime="20210214 17:14:20.052"></status>
+</kw>
+<status status="PASS" starttime="20210214 17:14:18.245" endtime="20210214 17:14:20.054"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>3 sec</arg>
+<arg>1 sec</arg>
+<arg>Check customer In Database</arg>
+<arg>${TEST_EMAIL}</arg>
+</arguments>
+<kw name="Check customer In Database" library="DataBase">
+<arguments>
+<arg>${TEST_EMAIL}</arg>
+</arguments>
+<kw name="Check If Exists In Database" library="DatabaseLibrary">
+<doc>Check if any row would be returned by given the input `selectStatement`. If there are no results, then this will
+throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit transaction
+commit or rollback.</doc>
+<arguments>
+<arg>select email from ${CUSTOMER_DB} where email = '${value}'</arg>
+</arguments>
+<msg timestamp="20210214 17:14:20.058" level="INFO">Executing : Check If Exists In Database  |  select email from oc_customer where email = 'test@mail.ru' </msg>
+<msg timestamp="20210214 17:14:20.058" level="INFO">Executing : Query  |  select email from oc_customer where email = 'test@mail.ru' </msg>
+<status status="PASS" starttime="20210214 17:14:20.057" endtime="20210214 17:14:20.067"></status>
+</kw>
+<status status="PASS" starttime="20210214 17:14:20.056" endtime="20210214 17:14:20.069"></status>
+</kw>
+<status status="PASS" starttime="20210214 17:14:20.055" endtime="20210214 17:14:20.070"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Execute Sql String</arg>
+<arg>delete from ${CUSTOMER_DB} where email = '${TEST_EMAIL}'</arg>
+<arg>AND</arg>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Execute Sql String" library="DatabaseLibrary">
+<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
+True to run command without an explicit transaction commit or rollback.</doc>
+<arguments>
+<arg>delete from ${CUSTOMER_DB} where email = '${TEST_EMAIL}'</arg>
+</arguments>
+<msg timestamp="20210214 17:14:20.074" level="INFO">Executing : Execute SQL String  |  delete from oc_customer where email = 'test@mail.ru' </msg>
+<status status="PASS" starttime="20210214 17:14:20.073" endtime="20210214 17:14:20.084"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210214 17:14:20.086" endtime="20210214 17:14:20.400"></status>
+</kw>
+<status status="PASS" starttime="20210214 17:14:20.071" endtime="20210214 17:14:20.401"></status>
+</kw>
+<doc>Register a new user using the user interface and check if it is up to date in the database</doc>
+<tags>
+<tag>AddAccount</tag>
+<tag>DB</tag>
+</tags>
+<status status="PASS" starttime="20210214 17:14:11.618" endtime="20210214 17:14:20.402" critical="yes"></status>
+</test>
+<kw name="Disconnect From Database" library="DatabaseLibrary" type="teardown">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20210214 17:14:20.420" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20210214 17:14:20.419" endtime="20210214 17:14:20.420"></status>
+</kw>
+<status status="PASS" starttime="20210214 17:14:11.234" endtime="20210214 17:14:20.422"></status>
+</suite>
+<suite id="s1-s5" name="OpencartTest" source="/Volumes/WDCWD/Projects/OtusPythonQAJune2020/Selenium/Robot/Tests/OpencartTest.robot">
+<test id="s1-s5-t1" name="The page contains the title &quot;Your Store&quot;">
+<kw name="Open Browser" library="SeleniumLibrary" type="setup">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:20.468" level="INFO">Opening browser 'chrome' to base url 'http://localhost'.</msg>
+<status status="PASS" starttime="20210214 17:14:20.466" endtime="20210214 17:14:25.184"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:25.189" level="INFO">Opening url 'http://localhost'</msg>
+<status status="PASS" starttime="20210214 17:14:25.188" endtime="20210214 17:14:25.683"></status>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<doc>Returns the title of the current page.</doc>
+<assign>
+<var>${TITLE}</var>
+</assign>
+<msg timestamp="20210214 17:14:25.693" level="INFO">${TITLE} = Your Store</msg>
+<status status="PASS" starttime="20210214 17:14:25.685" endtime="20210214 17:14:25.693"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${TITLE}</arg>
+<arg>Your Store</arg>
+</arguments>
+<status status="PASS" starttime="20210214 17:14:25.696" endtime="20210214 17:14:25.697"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210214 17:14:25.698" endtime="20210214 17:14:25.847"></status>
+</kw>
+<status status="PASS" starttime="20210214 17:14:20.463" endtime="20210214 17:14:25.848" critical="yes"></status>
+</test>
+<test id="s1-s5-t2" name="Clicking on the Tablets sidebar opens the Tablets page and has a product on it">
+<kw name="Open Browser" library="SeleniumLibrary" type="setup">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:25.859" level="INFO">Opening browser 'chrome' to base url 'http://localhost'.</msg>
+<status status="PASS" starttime="20210214 17:14:25.858" endtime="20210214 17:14:30.647"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}/index.php?route=product/category&amp;path=20</arg>
+</arguments>
+<msg timestamp="20210214 17:14:30.652" level="INFO">Opening url 'http://localhost/index.php?route=product/category&amp;path=20'</msg>
+<status status="PASS" starttime="20210214 17:14:30.650" endtime="20210214 17:14:31.213"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LIST_GROUP_ITEM}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:31.217" level="INFO">Clicking element 'css=.list-group-item:nth-child(6)'.</msg>
+<status status="PASS" starttime="20210214 17:14:31.215" endtime="20210214 17:14:31.734"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${CAPTION_H4}</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${temp_elem}</var>
+</assign>
+<msg timestamp="20210214 17:14:31.765" level="INFO">${temp_elem} = Samsung Galaxy Tab 10.1</msg>
+<status status="PASS" starttime="20210214 17:14:31.735" endtime="20210214 17:14:31.765"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${temp_elem}</arg>
+<arg>Samsung Galaxy Tab 10.1</arg>
+</arguments>
+<status status="PASS" starttime="20210214 17:14:31.767" endtime="20210214 17:14:31.767"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210214 17:14:31.768" endtime="20210214 17:14:31.913"></status>
+</kw>
+<status status="PASS" starttime="20210214 17:14:25.855" endtime="20210214 17:14:31.915" critical="yes"></status>
+</test>
+<test id="s1-s5-t3" name="Follow the link from the footer">
+<kw name="Open Browser" library="SeleniumLibrary" type="setup">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:31.928" level="INFO">Opening browser 'chrome' to base url 'http://localhost'.</msg>
+<status status="PASS" starttime="20210214 17:14:31.927" endtime="20210214 17:14:36.928"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:36.934" level="INFO">Opening url 'http://localhost'</msg>
+<status status="PASS" starttime="20210214 17:14:36.933" endtime="20210214 17:14:37.651"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${FOOTER}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:37.654" level="INFO">Clicking element 'css=footer .col-sm-3:first-child li:first-child a'.</msg>
+<status status="PASS" starttime="20210214 17:14:37.653" endtime="20210214 17:14:38.052"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>http://localhost/about_us</arg>
+</arguments>
+<msg timestamp="20210214 17:14:38.062" level="INFO">Current location is 'http://localhost/about_us'.</msg>
+<status status="PASS" starttime="20210214 17:14:38.054" endtime="20210214 17:14:38.062"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210214 17:14:38.064" endtime="20210214 17:14:38.244"></status>
+</kw>
+<status status="PASS" starttime="20210214 17:14:31.924" endtime="20210214 17:14:38.245" critical="yes"></status>
+</test>
+<test id="s1-s5-t4" name="Clicking on the banner opens another page">
+<kw name="Open Browser" library="SeleniumLibrary" type="setup">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:38.264" level="INFO">Opening browser 'chrome' to base url 'http://localhost'.</msg>
+<status status="PASS" starttime="20210214 17:14:38.263" endtime="20210214 17:14:43.538"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}/index.php?route=product/category&amp;path=20</arg>
+</arguments>
+<msg timestamp="20210214 17:14:43.544" level="INFO">Opening url 'http://localhost/index.php?route=product/category&amp;path=20'</msg>
+<status status="PASS" starttime="20210214 17:14:43.542" endtime="20210214 17:14:44.153"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BANNER}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:44.155" level="INFO">Clicking element 'css=#banner0'.</msg>
+<status status="PASS" starttime="20210214 17:14:44.154" endtime="20210214 17:14:44.563"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>http://localhost/index.php?route=product/manufacturer/info&amp;manufacturer_id=7</arg>
+</arguments>
+<msg timestamp="20210214 17:14:44.573" level="INFO">Current location is 'http://localhost/index.php?route=product/manufacturer/info&amp;manufacturer_id=7'.</msg>
+<status status="PASS" starttime="20210214 17:14:44.566" endtime="20210214 17:14:44.573"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210214 17:14:44.575" endtime="20210214 17:14:44.727"></status>
+</kw>
+<status status="PASS" starttime="20210214 17:14:38.260" endtime="20210214 17:14:44.728" critical="yes"></status>
+</test>
+<test id="s1-s5-t5" name="Logout Admin">
+<kw name="Open Browser" library="SeleniumLibrary" type="setup">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:44.740" level="INFO">Opening browser 'chrome' to base url 'http://localhost'.</msg>
+<status status="PASS" starttime="20210214 17:14:44.739" endtime="20210214 17:14:49.671"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}/admin/</arg>
+</arguments>
+<msg timestamp="20210214 17:14:49.678" level="INFO">Opening url 'http://localhost/admin/'</msg>
+<status status="PASS" starttime="20210214 17:14:49.675" endtime="20210214 17:14:50.161"></status>
+</kw>
+<kw name="Login-Logout Admin" library="OpencartPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN}</arg>
+<arg>user</arg>
+</arguments>
+<msg timestamp="20210214 17:14:50.167" level="INFO">Typing text 'user' into text field 'css=#input-username'.</msg>
+<status status="PASS" starttime="20210214 17:14:50.166" endtime="20210214 17:14:50.411"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PASS}</arg>
+<arg>bitnami</arg>
+</arguments>
+<msg timestamp="20210214 17:14:50.415" level="INFO">Typing text 'bitnami' into text field 'css=#input-password'.</msg>
+<status status="PASS" starttime="20210214 17:14:50.414" endtime="20210214 17:14:50.576"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${ENTER}</arg>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20210214 17:14:50.581" level="INFO">Sending key(s) ('ENTER',) to css=#input-password element.</msg>
+<msg timestamp="20210214 17:14:50.875" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20210214 17:14:50.876" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20210214 17:14:50.578" endtime="20210214 17:14:51.545"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOG_OUT}</arg>
+</arguments>
+<msg timestamp="20210214 17:14:51.548" level="INFO">Clicking element 'css=.navbar-right &gt; li:last-child a'.</msg>
+<status status="PASS" starttime="20210214 17:14:51.547" endtime="20210214 17:14:51.804"></status>
+</kw>
+<status status="PASS" starttime="20210214 17:14:50.164" endtime="20210214 17:14:51.805"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>http://localhost/admin/index.php?route=common/login</arg>
+</arguments>
+<msg timestamp="20210214 17:14:51.812" level="INFO">Current location is 'http://localhost/admin/index.php?route=common/login'.</msg>
+<status status="PASS" starttime="20210214 17:14:51.806" endtime="20210214 17:14:51.812"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210214 17:14:51.814" endtime="20210214 17:14:51.960"></status>
+</kw>
+<status status="PASS" starttime="20210214 17:14:44.738" endtime="20210214 17:14:51.962" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210214 17:14:20.438" endtime="20210214 17:14:51.977"></status>
+</suite>
+<status status="PASS" starttime="20210214 17:14:07.227" endtime="20210214 17:14:52.007"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="13" fail="0">Critical Tests</stat>
+<stat pass="13" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">AddAccount</stat>
+<stat pass="1" fail="0">DB</stat>
+</tag>
+<suite>
+<stat pass="13" fail="0" id="s1" name="Tests">Tests</stat>
+<stat pass="2" fail="0" id="s1-s1" name="ApiDogBreed">Tests.ApiDogBreed</stat>
+<stat pass="2" fail="0" id="s1-s2" name="ApiDogImages">Tests.ApiDogImages</stat>
+<stat pass="3" fail="0" id="s1-s3" name="ApiTesting">Tests.ApiTesting</stat>
+<stat pass="1" fail="0" id="s1-s4" name="DatabaseTesting">Tests.DatabaseTesting</stat>
+<stat pass="5" fail="0" id="s1-s5" name="OpencartTest">Tests.OpencartTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
